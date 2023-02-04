@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { signInApi } from '../../api/auth';
 
 import Container from '../../UIElements/Container';
 import './SignInForm.css';
@@ -16,6 +17,15 @@ function SignInForm() {
   // 로그인 버튼 활성/비활성을 위한 state
   // 컴포넌트 마운트 시 처음에는 인풋창에 아무것도 써져 있지 않으므로 true로 시작
   const [isDisabled, setIsDisabled] = useState(true);
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const hasToken = localStorage.getItem('auth');
+    if (hasToken) {
+      navigate('/todo');
+    }
+  }, [navigate]);
 
   // isValidEmail, isValidPassword값이 바뀔때 마다 즉 사용자가 이메일이나 패스워드 지우고 재입력할 때 마다
   // 호출되어 유효성 여부에 따라 버튼을 활성화/비활성화 시켜줌
@@ -49,9 +59,25 @@ function SignInForm() {
     }
   };
 
-  const submitHandler = (event) => {
+  const submitHandler = async (event) => {
     event.preventDefault();
-    console.log('제출!');
+    const body = {
+      email,
+      password,
+    };
+
+    try {
+      const res = await signInApi(body);
+      if (res.status !== 200) {
+        alert('로그인이 실패하였습니다.');
+        return;
+      }
+      localStorage.setItem('auth', res.data.access_token);
+      navigate('/todo');
+    } catch (error) {
+      alert('에러가 발생하였습니다.');
+      console.log(error);
+    }
   };
 
   return (
