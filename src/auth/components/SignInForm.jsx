@@ -106,7 +106,7 @@ function SignInForm() {
         </div>
         <div className='signin-form__signin-btn'>
           <button
-            data-testid='signup-button'
+            data-testid='signin-button'
             type='submit'
             disabled={isDisabled}
           >
@@ -116,7 +116,7 @@ function SignInForm() {
       </form>
       <div className='signup-link-btn'>
         <Link to='/signup'>
-          <button>회원가입</button>
+          <button>회원가입으로</button>
         </Link>
       </div>
     </Container>
