@@ -1,0 +1,50 @@
+.landing {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.landing__signin-link button {
+  width: 300px;
+  height: 45px;
+  font-size: 18px;
+  border-radius: 6px;
+  border: none;
+  background-color: #1976d2;
+  color: #fff;
+  margin-bottom: 16px;
+  cursor: pointer;
+}
+
+.landing__signin-link {
+  text-decoration: none;
+}
+
+.landing__signin-link:visited {
+  text-decoration: none;
+  color: black;
+}
+
+.landing__signup-link button {
+  width: 300px;
+  height: 45px;
+  font-size: 18px;
+  border-radius: 6px;
+  border: none;
+  background-color: #1976d2;
+  color: #fff;
+  cursor: pointer;
+}
+
+.landing__signup-link {
+  text-decoration: none;
+}
+
+.landing__signup-link:visited {
+  text-decoration: none;
+  color: black;
+}
