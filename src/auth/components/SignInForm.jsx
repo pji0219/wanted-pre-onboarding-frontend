@@ -17,8 +17,8 @@ function SignInForm() {
   // 컴포넌트 마운트 시 처음에는 인풋창에 아무것도 써져 있지 않으므로 true로 시작
   const [isDisabled, setIsDisabled] = useState(true);
 
-  // isValidEmail, isValidPassword값이 바뀔때 마다 즉 이메일과 패스워드가 바뀔 때 마다 리렌더링
-  // 하면서 유효성 여부에 따라 버튼을 활성화/비활성화 시켜줌
+  // isValidEmail, isValidPassword값이 바뀔때 마다 즉 사용자가 이메일이나 패스워드 지우고 재입력할 때 마다
+  // 호출되어 유효성 여부에 따라 버튼을 활성화/비활성화 시켜줌
   useEffect(() => {
     if (isValidEmail && isValidPassword === true) {
       setIsDisabled(false);
