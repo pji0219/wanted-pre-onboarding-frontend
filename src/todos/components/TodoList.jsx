@@ -2,9 +2,9 @@ import TodoItem from './TodoItem';
 
 function TodoList() {
   return (
-    <div>
+    <ul>
       <TodoItem />
-    </div>
+    </ul>
   );
 }
 
