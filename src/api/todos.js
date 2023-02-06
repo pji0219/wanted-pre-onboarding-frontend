@@ -2,16 +2,10 @@ import axios from 'axios';
 
 const token = localStorage.getItem('auth');
 
-const postConfig = {
+const config = {
   headers: {
     Authorization: `Bearer ${token}`,
     'Content-Type': 'application/json',
-  },
-};
-
-const getConfig = {
-  headers: {
-    Authorization: `Bearer ${token}`,
   },
 };
 
@@ -19,7 +13,7 @@ export const createTodoApi = async (payload) => {
   const res = await axios.post(
     `${process.env.REACT_APP_SERVER_URL}todos`,
     payload,
-    postConfig
+    config
   );
 
   return res;
@@ -28,7 +22,7 @@ export const createTodoApi = async (payload) => {
 export const getTodosApi = async () => {
   const res = await axios.get(
     `${process.env.REACT_APP_SERVER_URL}todos`,
-    getConfig
+    config
   );
 
   return res;

@@ -17,10 +17,10 @@ function Todos() {
   }, [navigate]);
 
   return (
-    <div>
+    <>
       <NewTodoForm setTodos={setTodos} />
-      <TodoList />
-    </div>
+      <TodoList todos={todos} />
+    </>
   );
 }
 

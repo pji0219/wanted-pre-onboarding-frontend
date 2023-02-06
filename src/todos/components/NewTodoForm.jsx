@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import { createTodoApi } from '../../api/todos';
 
-function NewTodoForm({ setTodo }) {
+function NewTodoForm({ setTodos }) {
   const [newTodo, setNewTodo] = useState('');
 
   const todoChangeHandler = (event) => {
@@ -21,8 +21,8 @@ function NewTodoForm({ setTodo }) {
         alert('할 일 추가에 실패하였습니다.');
         return;
       }
-
-      setTodo((prev) => [...prev, res.data]);
+      console.log(res.data);
+      setTodos((prev) => [...prev, res.data]);
     } catch (error) {
       alert('에러가 발생하였습니다.');
       console.log(error);
