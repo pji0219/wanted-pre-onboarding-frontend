@@ -1,0 +1,17 @@
+.todo-item {
+  width: 80%;
+  height: 40px;
+  border: 1px solid;
+  margin-bottom: 16px;
+  padding: 0 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.todo-item__btn {
+}
+
+.todo-item__btn__modify {
+  margin-right: 5px;
+}

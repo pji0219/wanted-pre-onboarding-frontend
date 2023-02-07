@@ -21,7 +21,7 @@ function NewTodoForm({ setTodos }) {
         alert('할 일 추가에 실패하였습니다.');
         return;
       }
-      console.log(res.data);
+
       setTodos((prev) => [...prev, res.data]);
     } catch (error) {
       alert('에러가 발생하였습니다.');
