@@ -27,3 +27,12 @@ export const getTodosApi = async () => {
 
   return res;
 };
+
+export const deleteTodoApi = async (id) => {
+  const res = await axios.delete(
+    `${process.env.REACT_APP_SERVER_URL}todos/${id}`,
+    config
+  );
+
+  return res;
+};

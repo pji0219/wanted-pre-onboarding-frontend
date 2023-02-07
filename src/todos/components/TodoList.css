@@ -2,4 +2,5 @@
   width: 90%;
   list-style: none;
   overflow: scroll;
+  overflow-x: hidden;
 }
