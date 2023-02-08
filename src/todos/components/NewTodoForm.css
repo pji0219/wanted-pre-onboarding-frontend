@@ -1,0 +1,17 @@
+.new-todo-form__input-container {
+  display: flex;
+  align-items: center;
+}
+
+.new-todo-form__input-container input {
+  height: 24px;
+  font-size: 17px;
+}
+
+.new-todo-form__input-container button {
+  width: 50px;
+  height: 30px;
+  font-size: 17px;
+  background-color: #e040fb;
+  border: none;
+}

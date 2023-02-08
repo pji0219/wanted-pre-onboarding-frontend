@@ -4,3 +4,8 @@
   overflow: scroll;
   overflow-x: hidden;
 }
+
+.no-todo {
+  margin-top: 16px;
+  font-size: 18px;
+}

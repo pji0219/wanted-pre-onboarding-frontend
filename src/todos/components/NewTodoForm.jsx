@@ -1,6 +1,7 @@
 import { useState } from 'react';
 
 import { createTodoApi } from '../../api/todos';
+import './NewTodoForm.css';
 
 function NewTodoForm({ setTodos }) {
   const [newTodo, setNewTodo] = useState('');
@@ -32,16 +33,18 @@ function NewTodoForm({ setTodos }) {
   };
 
   return (
-    <form onSubmit={sumbitHandler}>
-      <input
-        data-testid='new-todo-input'
-        type='text'
-        onChange={todoChangeHandler}
-        value={newTodo}
-      />
-      <button data-testid='new-todo-add-button' type='submit'>
-        추가
-      </button>
+    <form onSubmit={sumbitHandler} className='new-todo-form'>
+      <div className='new-todo-form__input-container'>
+        <input
+          data-testid='new-todo-input'
+          type='text'
+          onChange={todoChangeHandler}
+          value={newTodo}
+        />
+        <button data-testid='new-todo-add-button' type='submit'>
+          추가
+        </button>
+      </div>
     </form>
   );
 }

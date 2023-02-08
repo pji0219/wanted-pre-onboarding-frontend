@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
 
 import { getTodosApi } from '../../api/todos';
-import Container from '../../UIElements/Container';
+import Header from '../../UIElements/Header';
 import NewTodoForm from '../components/NewTodoForm';
 import TodoList from '../components/TodoList';
+import './Todos.css';
 
 function Todos() {
   const [todos, setTodos] = useState([]);
@@ -35,10 +36,12 @@ function Todos() {
   }, []);
 
   return (
-    <Container>
-      <NewTodoForm setTodos={setTodos} />
+    <div className='todos-container'>
+      <Header>
+        <NewTodoForm setTodos={setTodos} />
+      </Header>
       <TodoList todos={todos} setTodos={setTodos} />
-    </Container>
+    </div>
   );
 }
 

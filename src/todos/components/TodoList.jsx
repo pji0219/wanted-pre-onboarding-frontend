@@ -4,7 +4,7 @@ import './TodoList.css';
 
 function TodoList({ todos, setTodos }) {
   if (todos.length === 0) {
-    return <span>아직 추가된 할 일이 없습니다.</span>;
+    return <span className='no-todo'>아직 추가된 할 일이 없습니다.</span>;
   }
 
   return (

@@ -1,0 +1,26 @@
+.header {
+  width: 95%;
+  height: 80px;
+  padding: 0 16px;
+  margin-bottom: 16px;
+  border-top-right-radius: 6px;
+  border-top-left-radius: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1976d2;
+}
+
+.header__title {
+  margin-bottom: 4px;
+}
+
+.header__logout-btn button {
+  width: 100px;
+  height: 30px;
+  border-radius: 6px;
+  border: none;
+  font-size: 18px;
+  background-color: orange;
+  cursor: pointer;
+}
