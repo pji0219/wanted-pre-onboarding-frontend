@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 
 import { getTodosApi } from '../../api/todos';
 import Container from '../../UIElements/Container';
@@ -9,14 +8,12 @@ import TodoList from '../components/TodoList';
 function Todos() {
   const [todos, setTodos] = useState([]);
 
-  const navigate = useNavigate();
-
   useEffect(() => {
     const hasToken = localStorage.getItem('auth');
     if (!hasToken) {
-      navigate('/signin');
+      window.location.replace('/signin');
     }
-  }, [navigate]);
+  }, []);
 
   useEffect(() => {
     const dataFetch = async () => {
