@@ -20,18 +20,12 @@ function Todos() {
   // 투두 목록 조회
   useEffect(() => {
     const dataFetch = async () => {
-      try {
-        const res = await getTodosApi();
+      const res = await getTodosApi();
 
-        if (res.status !== 200) {
-          alert('할 일 목록을 불러오는데 실패하였습니다.');
-          return;
-        }
-        setTodos(res.data);
-      } catch (error) {
-        alert('에러가 발생하였습니다.');
-        console.log(error);
+      if (res.status !== 200) {
+        return;
       }
+      setTodos(res.data);
     };
 
     dataFetch();
