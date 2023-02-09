@@ -14,6 +14,11 @@
   font-size: 18px;
 }
 
+.todo-item__modify-input {
+  height: 24px;
+  font-size: 17px;
+}
+
 .todo-item__btn button {
   width: 70px;
   height: 40px;

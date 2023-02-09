@@ -28,6 +28,16 @@ export const getTodosApi = async () => {
   return res;
 };
 
+export const updateTodoApi = async (id, body) => {
+  const res = await axios.put(
+    `${process.env.REACT_APP_SERVER_URL}todos/${id}`,
+    body,
+    config
+  );
+
+  return res;
+};
+
 export const deleteTodoApi = async (id) => {
   const res = await axios.delete(
     `${process.env.REACT_APP_SERVER_URL}todos/${id}`,
