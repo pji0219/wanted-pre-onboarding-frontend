@@ -20,6 +20,7 @@ function SignUpForm() {
 
   const navigate = useNavigate();
 
+  // 토큰 있는 상태일 시 todo페이지로 리다이렉트
   useEffect(() => {
     const hasToken = localStorage.getItem('auth');
     if (hasToken) {
@@ -37,6 +38,7 @@ function SignUpForm() {
     }
   }, [isValidEmail, isValidPassword]);
 
+  // 이메일 입력
   const emailChangeHandler = (event) => {
     const value = event.target.value;
     setEmail(value);
@@ -48,6 +50,7 @@ function SignUpForm() {
     }
   };
 
+  // 패스워드 입력
   const passwordChangeHandler = (event) => {
     const value = event.target.value;
     setPassword(value);
@@ -59,6 +62,7 @@ function SignUpForm() {
     }
   };
 
+  // 이메일, 패스워드 제출
   const submitHandler = async (event) => {
     event.preventDefault();
     const body = {

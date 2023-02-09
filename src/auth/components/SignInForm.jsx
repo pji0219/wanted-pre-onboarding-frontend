@@ -18,6 +18,7 @@ function SignInForm() {
   // 컴포넌트 마운트 시 처음에는 인풋창에 아무것도 써져 있지 않으므로 true로 시작
   const [isDisabled, setIsDisabled] = useState(true);
 
+  // 토큰 있는 상태일 시 투두 페이지로 리다이렉트
   useEffect(() => {
     const hasToken = localStorage.getItem('auth');
     if (hasToken) {
@@ -35,6 +36,7 @@ function SignInForm() {
     }
   }, [isValidEmail, isValidPassword]);
 
+  // 이메일 입력
   const emailChangeHandler = (event) => {
     const value = event.target.value;
     setEmail(value);
@@ -46,6 +48,7 @@ function SignInForm() {
     }
   };
 
+  // 패스워드 입력
   const passwordChangeHandler = (event) => {
     const value = event.target.value;
     setPassword(value);
@@ -57,6 +60,7 @@ function SignInForm() {
     }
   };
 
+  // 이메일, 패스워드 제출
   const submitHandler = async (event) => {
     event.preventDefault();
     const body = {

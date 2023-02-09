@@ -6,10 +6,12 @@ import './NewTodoForm.css';
 function NewTodoForm({ setTodos }) {
   const [newTodo, setNewTodo] = useState('');
 
+  // 투두 텍스트 입력
   const todoChangeHandler = (event) => {
     setNewTodo(event.target.value);
   };
 
+  // 투두 추가
   const sumbitHandler = async (event) => {
     event.preventDefault();
     const body = {

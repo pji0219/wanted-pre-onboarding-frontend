@@ -1,6 +1,7 @@
 import './Header.css';
 
 function Header(props) {
+  // 로그아웃
   const logoutHandler = () => {
     localStorage.clear();
     window.location.replace('/signin');

@@ -9,6 +9,7 @@ import './Todos.css';
 function Todos() {
   const [todos, setTodos] = useState([]);
 
+  // 토큰 없는 상태로 /todo경로 접근 시 로그인 페이지로 리다이렉트
   useEffect(() => {
     const hasToken = localStorage.getItem('auth');
     if (!hasToken) {
@@ -16,6 +17,7 @@ function Todos() {
     }
   }, []);
 
+  // 투두 목록 조회
   useEffect(() => {
     const dataFetch = async () => {
       try {
