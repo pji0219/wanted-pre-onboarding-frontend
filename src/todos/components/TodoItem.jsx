@@ -9,7 +9,7 @@ function TodoItem({ id, todo, isCompleted, setTodos }) {
   const [isEditMode, setIsEditMode] = useState(false);
 
   // 수정모드 시 기존 투두 텍스트를 가져와서 변경하기 위한 state
-  const [editedTodo, setEditedodo] = useState(todo);
+  const [editedTodo, setEditedTodo] = useState(todo);
 
   // 투두 완료 체크
   const completeCheckHandler = async () => {
@@ -36,12 +36,12 @@ function TodoItem({ id, todo, isCompleted, setTodos }) {
     setIsEditMode(false);
 
     // 취소 한 후 다시 수정모드 진입 시 서버로부터 받아온 기존의 투두 텍스트를 유지하기 위함
-    setEditedodo(todo);
+    setEditedTodo(todo);
   };
 
   // 수정할 텍스트 입력
   const todoChangeHandler = (event) => {
-    setEditedodo(event.target.value);
+    setEditedTodo(event.target.value);
   };
 
   // 수정사항 제출
